@@ -42,7 +42,11 @@ public class Items {
 	public void setItemdesc(String itemdesc) {
 		this.itemdesc = itemdesc;
 	}
-	
-
+	public String getItemImage() {
+		return itemImage;
+	}
+	public void setItemImage(String itemImage) {
+		this.itemImage = itemImage;
+	}
 }
 //surendar
