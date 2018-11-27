@@ -1,13 +1,28 @@
 package com.items;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;;
 
-public class items {
+@Entity
+public class items  {
+	@Id
+	@Column
+	@GeneratedValue(strategy=GenerationType.AUTO)// for auto incrementation
 	private int itemId;
+	@Column
 	private int vId;
+	@Column
 	private String itemCode;
+	@Column
 	private String itemTitle;
+	@Column
 	private String itemdesc;
+	@Column
 	private String itemImage;
-	public int getItemId() {
+	@Column
+	public int getitemId() {
 		return itemId;
 	}
 	@Override
