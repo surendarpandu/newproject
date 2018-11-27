@@ -1,4 +1,4 @@
-package com.items.pojo;
+package com.items;
 import javax.persistence.Entity;
 public class Items {
 	private int itemId;
