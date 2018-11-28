@@ -23,7 +23,7 @@ public class itemsDaoImpl implements ItemsDao {
 		
 	}
 public void delete(int itemId) {
-		session.getCurrentSession().delete(getitems(itemId));
+		session.getCurrentSession().delete(itemId);
 		
 	}
 
