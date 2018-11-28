@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.event.TransactionalEventListener;
-
 import com.items.items;
 import com.items.service.ItemsService;
 import com.itemsDao.ItemsDao;
