@@ -3,9 +3,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.Table;;
 
 @Entity
+@Table(appliesTo = "")
 public class items  {
 	@Id
 	@Column
@@ -19,16 +22,25 @@ public class items  {
 	private String itemTitle;
 	@Column
 	private String itemdesc;
-	@Column
-	private String itemImage;
-	@Column
-	public int getitemId() {
-		return itemId;
+	//@Column
+	//private String itemImage;
+	
+	public  items(){}
+	
+	
+	public items(int itemId, int vId, String itemCode, String itemTitle, String itemdesc) {
+		super();
+		this.itemId = itemId;
+		this.vId = vId;
+		this.itemCode = itemCode;
+		this.itemTitle = itemTitle;
+		this.itemdesc = itemdesc;
+		//this.itemImage = itemImage;
 	}
-	@Override
-	public String toString() {
-		return "Items [itemId=" + itemId + ", vId=" + vId + ", itemCode=" + itemCode + ", itemTitle=" + itemTitle
-				+ ", itemdesc=" + itemdesc + ", itemImage=" + itemImage + "]";
+
+
+	public int getItemId() {
+		return itemId;
 	}
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
@@ -57,12 +69,17 @@ public class items  {
 	public void setItemdesc(String itemdesc) {
 		this.itemdesc = itemdesc;
 	}
-	public String getItemImage() {
+	/*public String getItemImage() {
 		return itemImage;
 	}
 	public void setItemImage(String itemImage) {
 		this.itemImage = itemImage;
-	}
+	}*/
+	
+	
+
+	
+	
 }
 
 

@@ -8,6 +8,7 @@ public interface ItemsDao {
 	public void add(items items);
 	public void edit (items items);
 	public void delete(int itemId);
-	public List viewallitems();
+	public List<items> viewallitems(); 
+	public 	items findItems(int itemId);
 
 }

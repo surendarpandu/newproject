@@ -2,16 +2,15 @@ package com.items.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.event.TransactionalEventListener;
-
 import com.items.items;
 import com.items.service.ItemsService;
 import com.itemsDao.ItemsDao;
-import com.itemsDaoImpl.itemsDaoImpl;
 @Service
 public class ItemsServiceimpl implements ItemsService {
+	@Autowired
 	private ItemsDao itemsDao;
  @Transactional
 	public void add(items items) {
@@ -29,9 +28,14 @@ public class ItemsServiceimpl implements ItemsService {
 
 	}
 @Transactional
-	public List viewallitems() {
+	public List<items> viewallitems() {
 		
 		return itemsDao.viewallitems();
 	}
+	@Transactional
+public items findItems(int itemId) {
+	
+	return itemsDao.findItems(itemId);
+}
 
 }

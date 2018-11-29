@@ -2,6 +2,7 @@ package com.itemsDaoImpl;
 
 import java.util.List;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,6 +12,12 @@ import com.itemsDao.ItemsDao;
 public class itemsDaoImpl implements ItemsDao {
 	@Autowired
 	private SessionFactory session;
+	
+	
+	private Session getSession(){
+		return session.getCurrentSession();
+	}
+	
 
 
 	public void add(items items) {
@@ -23,13 +30,21 @@ public class itemsDaoImpl implements ItemsDao {
 		
 	}
 public void delete(int itemId) {
-		session.getCurrentSession().delete(itemId);
+		
+	items items=(items)getSession().get(items.class,itemId);
+	session.getCurrentSession().delete(items);
 		
 	}
 
-	public List viewallitems() {
+	@SuppressWarnings("unchecked")
+	public List<items> viewallitems() {
 		
-		return (List)session.getCurrentSession().createQuery("from items").list();
+		return (List<items>)session.getCurrentSession().createQuery("from items").list();
+	}
+
+	public items findItems(int itemId) {
+		items items=(items)getSession().get(items.class,itemId);
+		return items;
 	}
 	
 	
