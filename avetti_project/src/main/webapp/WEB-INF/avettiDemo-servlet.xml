@@ -20,6 +20,7 @@
 	
 	<bean id="ItemsService"
 		class="com.items.service.impl.ItemsServiceimpl" scope="singleton">
+	<property name="itemsDao" ref="ItemsDao"></property>
 	</bean>
 	<bean id="ItemsDao" class="com.itemsDaoImpl.itemsDaoImpl"></bean>
 </beans>

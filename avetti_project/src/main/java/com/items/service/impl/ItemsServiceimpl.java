@@ -12,7 +12,13 @@ import com.itemsDao.ItemsDao;
 public class ItemsServiceimpl implements ItemsService {
 	@Autowired
 	private ItemsDao itemsDao;
- @Transactional
+ public ItemsDao getItemsDao() {
+		return itemsDao;
+	}
+	public void setItemsDao(ItemsDao itemsDao) {
+		this.itemsDao = itemsDao;
+	}
+@Transactional
 	public void add(items items) {
 	   itemsDao.add(items);
 
